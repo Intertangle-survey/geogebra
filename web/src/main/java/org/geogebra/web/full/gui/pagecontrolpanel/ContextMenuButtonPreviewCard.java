@@ -78,8 +78,8 @@ public class ContextMenuButtonPreviewCard extends ContextMenuButtonCard {
 	 */
 	private void onPaste() {
 		hide();
-		app.dispatchEvent(new Event(EventType.PASTE_SLIDE).
-				setJsonArgument(getPasteJson()));
+		app.dispatchEvent(new Event(EventType.PASTE_SLIDE)
+				.setJsonArgument(getPasteJson()));
 		frame.getPageControlPanel().pastePage(card,
 				BrowserStorage.LOCAL.getItem(BrowserStorage.COPY_SLIDE));
 	}

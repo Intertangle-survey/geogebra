@@ -491,11 +491,13 @@ public class PageListController implements PageListControllerInterface,
 
 	@Override
 	public void clickPage(int pageIdx, boolean select) {
+		if (select) {
+			app.dispatchEvent(new Event(EventType.SELECT_SLIDE,
+					null, pageIdx + ""));
+		}
 		loadSlide(pageIdx);
 		if (select) {
 			setCardSelected(pageIdx);
-			app.dispatchEvent(new Event(EventType.SELECT_SLIDE,
-					null, pageIdx + ""));
 		}
 	}
 

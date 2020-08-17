@@ -224,21 +224,13 @@
                 } else if (last.type == "addSlide"
                 	|| last.type == "removeSlide"
                 	|| last.type == "moveSlide") {
-                	target.unregisterListeners();
                 	target.api.handleSlideAction(last.type, last.content);
-					target.registerListeners();
                 } else if (last.type == "selectSlide") {
-                	target.unregisterListeners();
                 	target.api.selectSlide(last.content);
-                	target.registerListeners();
                 } else if (last.type == "previewRefresh") {
-                	target.unregisterListeners();
                 	target.api.previewRefresh();
-                	target.registerListeners();
                 } else if (last.type == "pasteSlide") {
-                	target.unregisterListeners();
                 	target.api.handleSlideAction(last.type, last.content, last.label);
-                	target.registerListeners();
                 }
             }
         };
