@@ -223,7 +223,7 @@ public class GgbAPID extends GgbAPIJre {
 	}
 
 	@Override
-	public void handleSlideAction(String eventType, String pageIdx) {
+	public void handleSlideAction(String eventType, String pageIdx, String appStat) {
 		// stub
 	}
 

@@ -312,7 +312,7 @@ public class AppDNoGui extends AppCommon implements AppDI {
 		}
 
 		@Override
-		public void handleSlideAction(String eventType, String pageIdx) {
+		public void handleSlideAction(String eventType, String pageIdx, String appStat) {
 			// stub
 		}
 
