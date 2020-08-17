@@ -1110,8 +1110,9 @@ public interface JavaScriptAPI {
 	 * add/delete/copy/paste slide actions
 	 * @param eventType - event type (add, delete, etc.)
 	 * @param pageIdx - page index
+	 * @param appStat - appState
 	 */
-	void handleSlideAction(String eventType, String pageIdx);
+	void handleSlideAction(String eventType, String pageIdx, String appStat);
 
 	/**
 	 * select slide

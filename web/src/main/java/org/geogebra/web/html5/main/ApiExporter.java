@@ -836,8 +836,8 @@ public class ApiExporter {
 			ggbAPI.@org.geogebra.web.html5.main.GgbAPIW::endDrawRecordingAndLogResults()();
 		};
 
-		api.handleSlideAction = function(eventType, pageIdx) {
-			ggbAPI.@org.geogebra.web.html5.main.GgbAPIW::handleSlideAction(Ljava/lang/String;Ljava/lang/String;)(eventType + "", pageIdx + "");
+		api.handleSlideAction = function(eventType, pageIdx, appState) {
+			ggbAPI.@org.geogebra.web.html5.main.GgbAPIW::handleSlideAction(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)(eventType + "", pageIdx + "", appState + "");
 		};
 
 		api.selectSlide = function(pageIdx) {

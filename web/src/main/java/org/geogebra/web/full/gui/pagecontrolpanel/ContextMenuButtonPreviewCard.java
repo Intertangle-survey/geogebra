@@ -1,5 +1,8 @@
 package org.geogebra.web.full.gui.pagecontrolpanel;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.geogebra.common.plugin.Event;
 import org.geogebra.common.plugin.EventType;
 import org.geogebra.common.util.StringUtil;
@@ -75,8 +78,18 @@ public class ContextMenuButtonPreviewCard extends ContextMenuButtonCard {
 	 */
 	private void onPaste() {
 		hide();
+		app.dispatchEvent(new Event(EventType.PASTE_SLIDE).
+				setJsonArgument(getPasteJson()));
 		frame.getPageControlPanel().pastePage(card,
 				BrowserStorage.LOCAL.getItem(BrowserStorage.COPY_SLIDE));
+	}
+
+	protected Map<String, Object> getPasteJson() {
+		Map<String, Object> pasteJson = new HashMap<>();
+		pasteJson.put("cardIdx", card.getPageIndex());
+		pasteJson.put("ggbFile", BrowserStorage.LOCAL.getItem(BrowserStorage.COPY_SLIDE));
+
+		return pasteJson;
 	}
 
 	private void onCopy() {

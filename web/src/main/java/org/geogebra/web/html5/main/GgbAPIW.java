@@ -1478,9 +1478,8 @@ public class GgbAPIW extends GgbAPI {
 	}
 
 	@Override
-	public void handleSlideAction(String eventType, String pageIdx) {
+	public void handleSlideAction(String eventType, String pageIdx, String appState) {
 		EventType event = null;
-		//int page = pageIdx == "undefined" ? null : Integer.parseInt(pageIdx);
 		String[] args = new String[] {};
 		switch (eventType) {
 			case "addSlide":
@@ -1496,6 +1495,11 @@ public class GgbAPIW extends GgbAPI {
 			case "moveSlide":
 				event = EventType.MOVE_SLIDE;
 				args = pageIdx.split(",");
+				break;
+
+			case "pasteSlide":
+				event = EventType.PASTE_SLIDE;
+				args = new String[] { pageIdx, null, appState };
 				break;
 
 			default:
