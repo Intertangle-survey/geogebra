@@ -173,14 +173,14 @@
 					this.sendEvent(event[0]);
 					break;
 
-                case "removeSlide":
-                case "moveSlide":
-                case "selectSlide":
+				case "removeSlide":
+				case "moveSlide":
+				case "selectSlide":
 					this.sendEvent(event[0], event[2]);
 					break;
 
 				case "pasteSlide":
-					this.sendEvent(event[0], event.cardIdx, event.ggbFile)
+					this.sendEvent(event[0], event.cardIdx, event.ggbFile);
 					break;
 
                 default:
